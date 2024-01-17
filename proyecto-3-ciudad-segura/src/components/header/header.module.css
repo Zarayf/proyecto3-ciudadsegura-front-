@@ -1,4 +1,9 @@
 .header {
   background-color: #b3adbb;
   color: #423d15;
+  width: 100px;
+  height: 50%;
+  display: flex;
+}
+.img {
 }
