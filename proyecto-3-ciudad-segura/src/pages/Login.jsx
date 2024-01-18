@@ -1,3 +1,9 @@
+import { FormLogin } from '../components/formLogin/FormLogin';
+
 export const Login = () => {
-  return <div>holi</div>;
+  return (
+    <>
+      <FormLogin />
+    </>
+  );
 };
