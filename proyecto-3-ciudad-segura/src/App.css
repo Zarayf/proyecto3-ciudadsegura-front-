@@ -2,13 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #c7c2ce;
-  color: #423d15;
+  /* color: #423d15; */
+  color: olivedrab;
 }
+
+body,
 html {
   height: 100%;
-}
-body {
-  height: 100vh;
-  background-color: #423d15;
+  background-color: #c7c2ce;
+  width: 100%;
 }

@@ -5,8 +5,14 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <img className={styles.img} src={logo} alt='imagen logo' />
-      <nav>
-        s<Link to={'/login'}>LOGIN</Link>
+      <nav className={styles.nav}>
+        <ul>
+          <li className={styles.li}>
+            <Link className={styles.link} to={'/login'}>
+              LOGIN
+            </Link>
+          </li>
+        </ul>
       </nav>
     </header>
   );
