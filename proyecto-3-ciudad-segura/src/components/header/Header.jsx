@@ -8,6 +8,10 @@ export const Header = () => {
       <nav className={styles.nav}>
         <ul>
           <li className={styles.li}>
+            <Link className={styles.link} to={'/'}>
+              HOME
+            </Link>
+            {''}
             <Link className={styles.link} to={'/login'}>
               LOGIN
             </Link>

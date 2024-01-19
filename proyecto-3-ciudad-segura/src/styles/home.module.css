@@ -1,17 +1,21 @@
 .section {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  background-color: aqua;
-}
-.img {
   height: 80%;
   width: 100%;
-  /* height: 100vh; */
-  /* width: 100%;
-  height: 100%;
   position: absolute;
-  top: 50%;
-  -ms-transform: translateY(50%);
-  transform: translateY(0%); */
+  display: flex;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    ),
+    url('../img/fondo.narnia.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section:hover {
+  box-shadow: 10px 10px 368px -37px rgba(0, 0, 0, 1) inset;
+  -webkit-box-shadow: 10px 10px 368px -37px rgba(0, 0, 0, 1) inset;
+  -moz-box-shadow: 10px 10px 368px -37px rgba(0, 0, 0, 1) inset;
 }
