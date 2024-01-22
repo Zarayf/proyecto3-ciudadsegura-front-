@@ -24,8 +24,8 @@ export const AuthContextProvider = ({ children }) => {
 
         //logout(); lo dejamos comentado hasta que corrijamos errores. Nos está borrando el token por entrar algún error (LIDIA)
         console.error(error);
-      };
-     }
+      }
+     
     };
 
 
