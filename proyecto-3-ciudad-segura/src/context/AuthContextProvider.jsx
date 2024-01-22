@@ -11,8 +11,9 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('token', token);
+   }, [token]);
 
-  }, [token]);
+
 
   useEffect(() => {
     const getDataUserLogged = async () => {
@@ -20,18 +21,21 @@ export const AuthContextProvider = ({ children }) => {
         const data = await getDataUserLoggedService({ token });
         setUser(data);
       } catch (error) {
+
         //logout(); lo dejamos comentado hasta que corrijamos errores. Nos está borrando el token por entrar algún error (LIDIA)
         console.error(error);
-      }
+      };
+     }
     };
+
+
     getDataUserLogged();
   }, [token]);
 
   const logout = () => {
     setToken('');
     setUser(null); 
-    
-  };
+   };
 
 
   return (
