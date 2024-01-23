@@ -8,6 +8,13 @@
   align-items: center;
   opacity: 0.8;
   padding: 30px;
+  background: rgb(142, 102, 43);
+  background: linear-gradient(
+    0deg,
+    rgba(142, 102, 43, 1) 0%,
+    rgba(162, 132, 121, 1) 100%,
+    rgba(162, 132, 121, 1) 100%
+  );
 }
 .img {
   width: 8rem;
@@ -17,6 +24,10 @@
   list-style: none;
 }
 ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
   margin-bottom: 10px;
 }
 
