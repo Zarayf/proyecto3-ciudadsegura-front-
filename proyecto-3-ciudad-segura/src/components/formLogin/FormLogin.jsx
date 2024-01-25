@@ -50,7 +50,7 @@ export const FormLogin = () => {
           <button>Login</button>
         </div>
         <div>
-          <Link to={'/user/recover-password'}>
+          <Link to={'/user/password/recover'}>
             <p>Recupar contraseña</p>
           </Link>
         </div>

@@ -21,7 +21,7 @@ export const ListProblemsByIdDistrict = () => {
                   <li>
                     {problem.photo ? (
                       <img 
-                      src={`${VITE_API_URL}proyecto2-ciudadsegura/src/uploads/${problem.photo}`}
+                      src={`${VITE_API_URL}/uploads/${problem.photo}`}
                         alt="foto_problema"
                       />
                     ) : null}

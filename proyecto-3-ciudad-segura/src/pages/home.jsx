@@ -1,5 +1,5 @@
 // import imgPrincipal from '../img/imgPrincipal.jpg';
-import { SelectDistrict } from '../components/SelectDistrict';
+import { SelectDistrict } from '../components/selectDistrict/SelectDistrict';
 
 import styles from '../styles/home.module.css';
 
@@ -8,9 +8,8 @@ export const Home = () => {
     <>
       <section className={styles.section}>
         <form className={styles.form}>
-          <label> ¿ Qué barrio quieres consultar ?</label>
+          <p> ¿ Qué barrio quieres consultar ?</p>
           <SelectDistrict />
-          <button>Buscar</button>
         </form>
       </section>
     </>
