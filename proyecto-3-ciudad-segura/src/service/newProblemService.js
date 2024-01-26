@@ -15,6 +15,7 @@ export const newProblemService = async ({data, token}) => {
     if(!response.ok) throw new Error(json.message);
 
     return json.data.entry;
+    
 }
 
 export default newProblemService
