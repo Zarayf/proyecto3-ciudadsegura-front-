@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 /* ! FALTA DARLE UN FONDO AL HEADER  */
 .header {
   width: 100%;
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,11 +16,14 @@
   );
 }
 .img {
-  width: 8rem;
+  width: 7rem;
   display: block;
 }
 .li {
   list-style: none;
+}
+.li:hover {
+  text-shadow: -1px 1px 22px rgba(0, 0, 0, 0.69);
 }
 ul {
   display: flex;
@@ -33,6 +35,6 @@ ul {
 
 .link {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
   font-family: 'MedievalSharp', cursive;
 }

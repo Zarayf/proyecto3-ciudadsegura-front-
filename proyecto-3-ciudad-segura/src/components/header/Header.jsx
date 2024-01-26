@@ -1,6 +1,6 @@
 import styles from './header.module.css';
 import { Link } from 'react-router-dom';
-import logo from '../../img/logo.png';
+import logo2 from '../../img/logo2.png';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContextProvider';
 
@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <img className={styles.img} src={logo} alt='imagen logo' />
+      <img className={styles.img} src={logo2} alt='imagen logo' />
       <nav className={styles.nav}>
         <ul>
           <li className={styles.li}>

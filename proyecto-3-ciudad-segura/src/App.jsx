@@ -9,8 +9,7 @@ import { EditProblem } from './pages/EditProblem';
 import { ListProblem } from './pages/listProblem';
 import { ListProblemsByIdDistrict } from './pages/ListProblemsByIdDistrict';
 import { RecoverPassword } from './pages/RecoverPassword';
-
-
+import { ChangeRecoverPassword } from './components/changeRecoverPassword/ChangeRecoverPassword';
 
 function App() {
   return (
@@ -18,16 +17,29 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+
         <Route path='/AdminPage' element={<AdminPage />} />
+
         <Route path='/NewProblem' element={<NewProblem />} />
+
         <Route path='/EditProblem' element={<EditProblem />} />
+
         <Route
           path='/problems/districts/:id_district'
           element={<ListProblemsByIdDistrict />}
         />
+
         <Route path='/ListProblem' element={<ListProblem />} />
+
         <Route path='/login' element={<Login />} />
+
         <Route path='/user/password/recover' element={<RecoverPassword />} />
+
+        <Route
+          path='/user/password/reset'
+          element={<ChangeRecoverPassword />}
+        />
+
         <Route path='*' element={<Home />} />
       </Routes>
 
