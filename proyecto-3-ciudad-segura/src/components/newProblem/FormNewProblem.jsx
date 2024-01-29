@@ -1,7 +1,7 @@
 import { AuthContext } from '../../context/AuthContextProvider';
 import { useContext, useState } from 'react';
 import { newProblemService } from '../../service/newProblemService';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './FormNewProblem.module.css';
 
 
@@ -12,7 +12,7 @@ export const FormNewProblem = () => {
   const [Image, setImage] = useState(null);
   const [reply, setReply] = useState('');
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,10 +22,12 @@ export const FormNewProblem = () => {
 
       const newProblem = await newProblemService({ data, token });
       setReply(newProblem);
+      setError("");
+      navigate('/AdminPage');
       
-      //navigate('/');
     } catch (error) {
       setError(error.message);
+      setReply("");
     }
   };
 
@@ -75,7 +77,7 @@ export const FormNewProblem = () => {
         </div>
         <input type='submit' value='Enviar' />
         {error ? <p>{error}</p> : null}
-        {reply ? <p>Has registrado el problema con exito.</p> : ""} 
+        {reply ? <p>Has registrado el problema con exito.</p> :  ""} 
         
       </form>
     </section>

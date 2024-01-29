@@ -4,7 +4,7 @@ import { Header } from './components/header/Header';
 import { Login } from './pages/Login';
 import { Home } from './pages/home';
 import { AdminPage } from './pages/AdminPage';
-import { NewProblem } from './pages/newProblem';
+import { NewProblem } from './pages/NewProblem';
 import { EditProblem } from './pages/EditProblem';
 import { ListProblem } from './pages/listProblem';
 import { ListProblemsByIdDistrict } from './pages/ListProblemsByIdDistrict';
