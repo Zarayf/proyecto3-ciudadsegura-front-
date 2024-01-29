@@ -1,8 +1,38 @@
-# React + Vite
+# Proyecto 3: Ciudad segura.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto Frontend es el resultado final de nuestro bootcamp en Hackaboss.
+Se complementa con el Backend del siguiente enlace: https://github.com/Zarayf/proyecto2-ciudadsegura.
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta app sirve para publicar problemas de accesibilidad de una ciudad.
+El o los administradores pueden publicar y editar las publicaciones.
+
+La hemos enfocado a la ciudad de Narnia pero se puede implementar para cualquier ciudad modificando los datos en la base de datos de la API.
+Dividimos la ciudad en barrios para que resulte más fácil la consulta de las publicaciones.
+
+## Tecnologías Usadas
+
+Para la construcción de este proyecto hemos utilizado:
+* HTML
+* CSS
+* Javascript
+* REACT
+
+
+
+
+## Autores
+
+* https://github.com/VictorTMD
+* https://github.com/lidiapdiaz
+* https://github.com/zoegongar
+* https://github.com/Zarayf
+
+
+
+
+
+
+
+
