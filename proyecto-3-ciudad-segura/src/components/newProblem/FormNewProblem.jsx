@@ -3,8 +3,7 @@ import { useContext, useState } from 'react';
 import { newProblemService } from '../../service/newProblemService';
 //import { useNavigate } from 'react-router-dom';
 import styles from './FormNewProblem.module.css';
-import { SelectDistrict } from '../selectDistrict/SelectDistrict';
-import { json } from 'react-router-dom';
+
 
 export const FormNewProblem = () => {
   const { token } = useContext(AuthContext);

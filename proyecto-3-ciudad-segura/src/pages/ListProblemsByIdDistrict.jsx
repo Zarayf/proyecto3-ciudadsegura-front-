@@ -1,12 +1,33 @@
 import { useParams } from 'react-router-dom';
 import { useProblems } from '../hook/useProblems';
 import style from '../styles/ListProblemsByIdDistrict.module.css';
+import { update } from '../service/update';
+import { AuthContext } from '../context/AuthContextProvider';
+import { useContext } from 'react';
+
 export const ListProblemsByIdDistrict = () => {
   const { id_district } = useParams();
-
+  const { token } = useContext (AuthContext);
   const { problems, error } = useProblems(id_district);
 
-  const { VITE_API_URL } = import.meta.env;
+  const {VITE_API_URL} = import.meta.env;
+  
+  const handleUpdate = async (problem) => {
+    
+
+    try {
+      
+
+      await update( problem, token );
+
+      /*navigate('/');*/
+      console.log ("actualizado");
+    } catch (error) {
+      /*setError(error.message);*/
+      console.error ("error");
+
+    }
+  };
 
   return (
     <div>
@@ -27,11 +48,11 @@ export const ListProblemsByIdDistrict = () => {
                       />
                     ) : null}
                   </li>
-                  <div>
-                    <li>
-                      <p>{problem.problem_status}</p>
-                    </li>
-                  </div>
+                <div>
+                  <li><p>{problem.problem_status}</p></li>
+                  <button onClick={ ()=> handleUpdate(problem.id_problem)  }> Marcar como hecho </button>
+                </div>  
+
                 </div>
                 <div>
                   <li>
