@@ -7,7 +7,5 @@ export const getproblemsByIdDisctrictService = async (id_district) => {
 
   const json = await response.json();
 
-  console.log(json);
-
   return json.data;
 };

@@ -22,7 +22,7 @@ export const ChangeRecoverPassword = () => {
     try {
       const data = new FormData(e.target);
 
-      const json = await changeRecoverPasswordService(data);
+      await changeRecoverPasswordService(data);
 
       navigate('/login');
     } catch (error) {
