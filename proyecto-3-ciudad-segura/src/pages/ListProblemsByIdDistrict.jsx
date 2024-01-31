@@ -7,36 +7,31 @@ import { useContext } from 'react';
 
 export const ListProblemsByIdDistrict = () => {
   const { id_district } = useParams();
-  const { token } = useContext (AuthContext);
+  const { token, user } = useContext(AuthContext);
   const { problems, error } = useProblems(id_district);
+  // const [status, setStatus] = useState('');
 
-  const {VITE_API_URL} = import.meta.env;
-  
+  const { VITE_API_URL } = import.meta.env;
+
   const handleUpdate = async (problem) => {
-    
-
     try {
-      
-
-      await update( problem, token );
+      await update(problem, token);
+      // setStatus(problem.problem_status);
 
       /*navigate('/');*/
-      console.log ("actualizado");
     } catch (error) {
       /*setError(error.message);*/
-      console.error ("error");
-
+      console.error('error');
     }
   };
 
   return (
-    <div>
+    <div className={style.div}>
       <h2>Problemas del barrio</h2>
-
       {problems &&
         problems?.map((problem) => {
           return (
-            <section key={problem.id_problem}>
+            <section className={style.section} key={problem.id_problem}>
               <ul>
                 <div>
                   <li>
@@ -46,13 +41,10 @@ export const ListProblemsByIdDistrict = () => {
                         src={`${VITE_API_URL}/uploads/${problem.photo}`}
                         alt='foto_problema'
                       />
-                    ) : null}
+                    ) : (
+                      <p>El problema no contiene imagen</p>
+                    )}
                   </li>
-                <div>
-                  <li><p>{problem.problem_status}</p></li>
-                  <button onClick={ ()=> handleUpdate(problem.id_problem)  }> Marcar como hecho </button>
-                </div>  
-
                 </div>
                 <div>
                   <li>
@@ -68,6 +60,20 @@ export const ListProblemsByIdDistrict = () => {
                       {new Date(problem.create_date).toLocaleString()}
                     </p>
                   </li>
+                  {/* <<<<<<<<<<<<<<<<<<<<<<<< */}
+                  <div>
+                    <li>
+                      <p> Estado:{problem.problem_status}</p>
+                    </li>
+                    {user ? (
+                      <button onClick={() => handleUpdate(problem.id_problem)}>
+                        {' '}
+                        Marcar como hecho{' '}
+                      </button>
+                    ) : (
+                      ''
+                    )}
+                  </div>
                 </div>
               </ul>
             </section>
