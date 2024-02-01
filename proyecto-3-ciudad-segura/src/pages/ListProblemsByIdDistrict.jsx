@@ -27,7 +27,7 @@ export const ListProblemsByIdDistrict = () => {
 
   return (
     <div className={style.div}>
-      <h2>Problemas del barrio</h2>
+      <h1>Problemas del barrio</h1>
       {problems &&
         problems?.map((problem) => {
           return (
@@ -68,7 +68,7 @@ export const ListProblemsByIdDistrict = () => {
                     {user ? (
                       <button onClick={() => handleUpdate(problem.id_problem)}>
                         {' '}
-                        Marcar como hecho{' '}
+                        Marcar como Resuelto{' '}
                       </button>
                     ) : (
                       ''
