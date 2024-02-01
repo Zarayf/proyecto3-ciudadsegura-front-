@@ -18,6 +18,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
 
+        <Route path='/ListProblem' element={<ListProblem />} />
+
         <Route path='/AdminPage' element={<AdminPage />} />
 
         <Route path='/NewProblem' element={<NewProblem />} />
@@ -29,7 +31,7 @@ function App() {
           element={<ListProblemsByIdDistrict />}
         />
 
-        <Route path='/ListProblem' element={<ListProblem />} />
+        
 
         <Route path='/login' element={<Login />} />
 

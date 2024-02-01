@@ -9,7 +9,7 @@ export const AdminPage = () => {
       <nav>
         <Link to={'/NewProblem'}>Crear problema</Link>
         {'  |  '}
-        <Link to={'/EditProblem'}>Editar problema</Link>
+        <Link to={'/ListProblem'}>Editar problema</Link>
         {'  |  '}
         <Link to={'/ListProblem'}>Listar problemas</Link>
         {'  |  '}
