@@ -53,7 +53,7 @@ export const FormLogin = () => {
           </div>
           <div className={styles.recuperarpass}>
             <Link className={styles.link} to={'/user/password/recover'}>
-              <p>Recupar contraseña</p>
+              <p>Recuperar contraseña</p>
             </Link>
           </div>
           {error ? <p>{error}</p> : null}

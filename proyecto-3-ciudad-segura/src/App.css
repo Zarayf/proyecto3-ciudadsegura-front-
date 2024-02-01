@@ -6,6 +6,11 @@
   box-sizing: border-box;
   color: black;
 }
+#root{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
 li {
   list-style: none;
 }
