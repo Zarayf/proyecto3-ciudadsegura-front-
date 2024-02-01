@@ -10,6 +10,7 @@ import { ListProblem } from './pages/listProblem';
 import { ListProblemsByIdDistrict } from './pages/ListProblemsByIdDistrict';
 import { RecoverPassword } from './pages/RecoverPassword';
 import { ChangeRecoverPassword } from './components/changeRecoverPassword/ChangeRecoverPassword';
+import { Register } from './components/formRegister/FormRegister';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
 
-        <Route path='/ListProblem' element={<ListProblem />} />
+        <Route path='/register' element={<Register />} />
 
         <Route path='/AdminPage' element={<AdminPage />} />
 

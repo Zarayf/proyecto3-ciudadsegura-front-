@@ -13,6 +13,8 @@ export const AdminPage = () => {
         {'  |  '}
         <Link to={'/ListProblem'}>Listar problemas</Link>
         {'  |  '}
+        <Link to={'/Register'}>Crear otro usuario</Link>
+        {'  |  '}
       </nav>
     </div>
   );

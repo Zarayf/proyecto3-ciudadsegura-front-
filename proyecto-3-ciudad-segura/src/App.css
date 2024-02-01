@@ -4,19 +4,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* color: #423d15; */
-  /* color: olivedrab; */
   color: black;
 }
-
-body {
-  height: 100vh;
+li {
+  list-style: none;
+}
+body,
+html {
+  height: 100%;
   width: 100%;
   background: rgb(142, 102, 43);
-  background: linear-gradient(
-    0deg,
-    rgba(142, 102, 43, 1) 0%,
-    rgba(162, 132, 121, 1) 100%,
-    rgba(162, 132, 121, 1) 100%
-  );
 }
