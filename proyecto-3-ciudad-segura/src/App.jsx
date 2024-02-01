@@ -6,7 +6,7 @@ import { Home } from './pages/home';
 import { AdminPage } from './pages/AdminPage';
 import { NewProblem } from './pages/NewProblem';
 import { EditProblem } from './pages/EditProblem';
-import { ListProblem } from './pages/listProblem';
+import { ListProblems } from './pages/ListProblems';
 import { ListProblemsByIdDistrict } from './pages/ListProblemsByIdDistrict';
 import { RecoverPassword } from './pages/RecoverPassword';
 import { ChangeRecoverPassword } from './components/changeRecoverPassword/ChangeRecoverPassword';
@@ -20,6 +20,8 @@ function App() {
         <Route path='/' element={<Home />} />
 
         <Route path='/register' element={<Register />} />
+
+        <Route path='/ListProblems' element={<ListProblems />} />
 
         <Route path='/AdminPage' element={<AdminPage />} />
 

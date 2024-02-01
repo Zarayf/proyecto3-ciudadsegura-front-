@@ -5,10 +5,9 @@ import { update } from '../service/update';
 import { AuthContext } from '../context/AuthContextProvider';
 import { useContext } from 'react';
 
-export const ListProblemsByIdDistrict = () => {
-  const { id_district } = useParams();
+export const ListProblems = () => {
   const { token, user } = useContext(AuthContext);
-  const { problems, error, updateProblems } = useProblems(id_district);
+  const { problems, error, updateProblems } = useProblems();
   // const [status, setStatus] = useState('');
 
   const { VITE_API_URL } = import.meta.env;
