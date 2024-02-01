@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { registerService } from '../../service/registerService';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './formRegister.module.css';
 
 export const Register = () => {
@@ -10,6 +10,8 @@ export const Register = () => {
   const [error, setError] = useState('');
   const [rta, setRta] = useState({});
   const [confirmPassword, setConfirmPassword] = useState('');
+  4;
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,67 +25,79 @@ export const Register = () => {
       const r = await registerService({ user_name, email, pass });
       setRta(r);
       setError('');
+      navigate('/Login');
     } catch (error) {
       setError(error.message);
     }
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <div>
-        <label>Nombre de usuario</label>
-        <input
-          type='text'
-          name='user_name'
-          value={user_name}
-          required
-          onChange={(e) => setUsername(e.target.value)}
-        />
+    <div className={styles.main}>
+      <div className={styles.content}>
+        <span>Registro</span>
+
+        <form onSubmit={handleSubmit}>
+          <div className={styles.field}>
+            <input
+              type='text'
+              name='user_name'
+              value={user_name}
+              placeholder='Nombre de usuario'
+              required
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.field}>
+            <input
+              type='email'
+              name='email'
+              value={email}
+              placeholder='Email'
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.field}>
+            <input
+              type='password'
+              name='pass'
+              value={pass}
+              placeholder='Contraseña'
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.field}>
+            <input
+              type='password'
+              name='confirmarPassword'
+              value={confirmPassword}
+              placeholder='Confirmar Contraseña'
+              required
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </div>
+          <div className={styles.submit}>
+            <button className={styles.enviar} type='submit'>
+              Enviar
+            </button>
+          </div>
+          {rta.status == 'ok' ? (
+            <>
+              <p>{rta.message}</p>
+              <Link to={'/login'}>
+                <button>Login</button>
+              </Link>
+            </>
+          ) : (
+            ''
+          )}
+          {error ? <p>{error}</p> : ''}
+        </form>
       </div>
-      <div>
-        <label>Email</label>
-        <input
-          type='email'
-          name='email'
-          value={email}
-          required
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          type='password'
-          name='pass'
-          value={pass}
-          required
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Confirmar Password</label>
-        <input
-          type='password'
-          name='confirmPassword'
-          value={confirmPassword}
-          required
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-      </div>
-      <div>
-        <input type='submit' value='Enviar' />
-      </div>
-      {rta.status == 'ok' ? (
-        <>
-          <p>{rta.message}</p>
-          <Link to={'/login'}>
-            <button>Login</button>
-          </Link>
-        </>
-      ) : (
-        ''
-      )}
-      {error ? <p>{error}</p> : ''}
-    </form>
+    </div>
   );
 };

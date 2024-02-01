@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { loginUserService } from '../../service/loginUserService';
 import { AuthContext } from '../../context/AuthContextProvider';
 import { useNavigate, Link } from 'react-router-dom';
+import styles from './formLogin.module.css';
 
 export const FormLogin = () => {
   const [email, setEmail] = useState('');
@@ -27,36 +28,38 @@ export const FormLogin = () => {
   };
 
   return (
-    <>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor=''>Email</label>
-          <input
-            type='email'
-            name='email'
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor=''>Password</label>
-          <input
-            type='password'
-            name='pass'
-            onChange={(e) => setPasswd(e.target.value)}
-          />
-        </div>
-        <div>
-          <button>Login</button>
-        </div>
-        <div>
-          <Link to={'/user/password/recover'}>
-            <p>Recupar contraseña</p>
-          </Link>
-        </div>
-        {error ? <p>{error}</p> : null}
-      </form>
-    </>
+    <div className={styles.main}>
+      <div className={styles.content}>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.field}>
+            <input
+              type='email'
+              name='email'
+              placeholder='Email'
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className={styles.field}>
+            <input
+              type='password'
+              name='pass'
+              placeholder='Contraseña'
+              onChange={(e) => setPasswd(e.target.value)}
+            />
+          </div>
+          <div className={styles.enviar}>
+            <button className={styles.login}>Login</button>
+          </div>
+          <div className={styles.recuperarpass}>
+            <Link className={styles.link} to={'/user/password/recover'}>
+              <p>Recupar contraseña</p>
+            </Link>
+          </div>
+          {error ? <p>{error}</p> : null}
+        </form>
+      </div>
+    </div>
   );
 };
 

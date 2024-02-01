@@ -13,7 +13,7 @@ export const RecoverPassword = () => {
     e.preventDefault();
 
     try {
-      const rta = await setRecoverPasswordService(email);
+      await setRecoverPasswordService(email);
 
       navigate('/user/password/reset');
     } catch (error) {
