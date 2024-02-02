@@ -5,10 +5,11 @@ import { update } from '../service/update';
 import { AuthContext } from '../context/AuthContextProvider';
 import { useContext } from 'react';
 
+/* función que lista todos los problemas */
 export const ListProblems = () => {
   const { token, user } = useContext(AuthContext);
   const { problems, error, updateProblems } = useProblems();
-  // const [status, setStatus] = useState('');
+
 
   const { VITE_API_URL } = import.meta.env;
 
@@ -17,15 +18,13 @@ export const ListProblems = () => {
       await update(problemId, token);
       const problem = problems.find(p=> (p.id_problem===problemId));
       problem.problem_status = "Resuelto";
-      console.log(problem);
       updateProblems();
-      /*navigate('/');*/
     } catch (error) {
-      /*setError(error.message);*/
       console.error('error');
     }
   };
 
+  /* Elemento que muestra el array de los problemas */
   return (
     <div className={style.div}>
       <h1>Problemas del barrio</h1>

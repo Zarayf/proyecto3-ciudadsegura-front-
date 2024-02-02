@@ -9,8 +9,6 @@ export const ListProblemsByIdDistrict = () => {
   const { id_district } = useParams();
   const { token, user } = useContext(AuthContext);
   const { problems, error, updateProblems } = useProblems(id_district);
-  // const [status, setStatus] = useState('');
-
   const { VITE_API_URL } = import.meta.env;
 
   const handleUpdate = async (problemId) => {
@@ -18,11 +16,8 @@ export const ListProblemsByIdDistrict = () => {
       await update(problemId, token);
       const problem = problems.find(p=> (p.id_problem===problemId));
       problem.problem_status = "Resuelto";
-      console.log(problem);
       updateProblems();
-      /*navigate('/');*/
     } catch (error) {
-      /*setError(error.message);*/
       console.error('error');
     }
   };

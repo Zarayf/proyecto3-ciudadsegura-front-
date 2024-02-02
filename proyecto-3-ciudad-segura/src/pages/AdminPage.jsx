@@ -9,9 +9,9 @@ export const AdminPage = () => {
       <nav>
         <Link to={'/NewProblem'}>Crear problema</Link>
         {'  |  '}
-        <Link to={'/ListProblems'}>Editar problema</Link>
+        <Link to={'/ListProblemsByIdDistrict'}>Listar/Editar los problemas por barrio</Link>
         {'  |  '}
-        <Link to={'/ListProblems'}>Listar problemas</Link>
+        <Link to={'/ListProblems'}>Listar/Editar todos problemas</Link>
         {'  |  '}
         <Link to={'/Register'}>Crear otro usuario</Link>
         {'  |  '}
