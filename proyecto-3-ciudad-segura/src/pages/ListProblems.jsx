@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import { useProblems } from '../hook/useProblems';
 import style from '../styles/ListProblemsByIdDistrict.module.css';
 import { update } from '../service/update';

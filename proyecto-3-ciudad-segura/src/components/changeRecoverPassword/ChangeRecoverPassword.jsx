@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 export const ChangeRecoverPassword = () => {
   const [email, setEmail] = useState('');
   const [regCode, setRegCode] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  //   const [confirmNewPass, setConfirmNewPass] = useState('');
+  const [newPass, setNewPass] = useState('');
+  //const [confirmNewPass, setConfirmNewPass] = useState('');
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
@@ -14,10 +14,10 @@ export const ChangeRecoverPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // if (newPassword !== confirmNewPass) {
-    //   setError('Las contaseñas son distintas');
-    //   return;
-    // }
+  /*   if (newPass !== confirmNewPass) {
+    setError('Las contaseñas son distintas');
+      return;
+    } */
 
     try {
       const data = new FormData(e.target);
@@ -59,18 +59,18 @@ export const ChangeRecoverPassword = () => {
         <div>
           <label>Ingrese nueva contraseña</label>
           <input
-            type='text'
+            type="password"
             name='newPass'
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            placeholder=' Nueva contraseña'
+            value={newPass}
+            onChange={(e) => setNewPass(e.target.value)}
+            placeholder='Nueva contraseña'
           />
         </div>
-        {/* <div>
+         {/* <div>
           <label>Repita nueva contraseña</label>
           <input
-            type='text'
-            name='newPass'
+            type='password'
+            name='confirmNewPass'
             value={confirmNewPass}
             onChange={(e) => setConfirmNewPass(e.target.value)}
             placeholder='Repita contraseña'

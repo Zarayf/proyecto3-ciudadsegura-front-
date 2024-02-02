@@ -20,3 +20,7 @@ html {
   width: 100%;
   background: rgb(142, 102, 43);
 }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'MedievalSharp';
+}

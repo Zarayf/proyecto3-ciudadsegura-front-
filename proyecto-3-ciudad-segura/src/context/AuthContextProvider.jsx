@@ -1,12 +1,13 @@
 import { createContext, useState, useEffect } from 'react';
 import { getDataUserLoggedService } from '../service/getDataUserLoggedService';
 import { PropTypes } from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
-
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -21,11 +22,9 @@ export const AuthContextProvider = ({ children }) => {
         const data = await getDataUserLoggedService({ token });
         setUser(data);
       } catch (error) {
-
-        //logout(); lo dejamos comentado hasta que corrijamos errores. Nos está borrando el token por entrar algún error (LIDIA)
-        console.error(error);
+        logout();
       }
-     
+
     };
 
 
@@ -35,6 +34,7 @@ export const AuthContextProvider = ({ children }) => {
   const logout = () => {
     setToken('');
     setUser(null); 
+    navigate('/');
    };
 
 
