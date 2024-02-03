@@ -11,12 +11,16 @@
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
-li {
+ li {
   list-style: none;
-}
+} 
 body,
 html {
   height: 100%;
   width: 100%;
   background: rgb(142, 102, 43);
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'MedievalSharp';
 }

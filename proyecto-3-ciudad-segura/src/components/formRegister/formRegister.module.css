@@ -27,10 +27,14 @@
   margin-top: 20px;
 }
 
-.content,span {
+
+
+
+.content,
+span {
   font-size: 30px;
   font-family: 'MedievalSharp', cursive;
-}
+} 
 
 .submit {
   text-align: center;
@@ -48,4 +52,13 @@
 }
 .enviar:hover {
   box-shadow: 7px 7px 22px 3px rgba(0, 0, 0, 0.133);
+}
+
+.error{
+  margin: 0 auto;
+  background-color: #b3adbb;
+  padding: 1em;
+  font-size: 0.9rem;
+  max-height: 50px;
+  border-radius: 10px;
 }

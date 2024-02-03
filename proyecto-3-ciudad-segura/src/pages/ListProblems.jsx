@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import { useProblems } from '../hook/useProblems';
 import style from '../styles/ListProblemsByIdDistrict.module.css';
 import { update } from '../service/update';
@@ -27,7 +27,10 @@ export const ListProblems = () => {
   /* Elemento que muestra el array de los problemas */
   return (
     <div className={style.div}>
-      <h1>Problemas del barrio</h1>
+      <h1>Lista de problemas</h1>
+      <pr>
+
+      </pr>
       {problems &&
         problems?.map((problem) => {
           return (
@@ -48,22 +51,22 @@ export const ListProblems = () => {
                 </div>
                 <div>
                   <li>
-                    <p> Título:{problem.title}</p>
+                    <p><h3> Título: {problem.title}</h3></p>
                   </li>
                   <li>
-                    <p> Descripción:{problem.description}</p>
+                    <p> Descripción: {problem.description}</p>
                   </li>
                   <li>
                     <p>
                       {' '}
                       Fecha creación:
-                      {new Date(problem.create_date).toLocaleString()}
+                        {new Date(problem.create_date).toLocaleString()}
                     </p>
                   </li>
                   {/* <<<<<<<<<<<<<<<<<<<<<<<< */}
                   <div>
                     <li>
-                      <p> Estado:{problem.problem_status}</p>
+                      <p> Estado: {problem.problem_status}</p>
                     </li>
                     {user ? (
                       <button onClick={() => handleUpdate(problem.id_problem)}>

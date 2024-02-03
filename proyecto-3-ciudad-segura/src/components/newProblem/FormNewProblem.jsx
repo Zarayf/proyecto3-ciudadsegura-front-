@@ -23,7 +23,7 @@ export const FormNewProblem = () => {
       const newProblem = await newProblemService({ data, token });
       setReply(newProblem);
       setError("");
-      navigate('/AdminPage');
+      //navigate('/AdminPage');
       
     } catch (error) {
       setError(error.message);
