@@ -1,26 +1,42 @@
 .div {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: space-evenly; 
+  flex-wrap: wrap; 
   background-color: rgba(255, 255, 255, 0.593);
-  gap: 10px;
+  gap: 10px; 
   height: 100%;
   width: 100%;
-  text-align: center;
+  text-align: left; 
   padding: 10px;
 }
 .section {
-  height: 400px;
-  width: 400px;
-  background-color: rgba(255, 255, 255, 0.84);
-  border: 1px solid black;
-  border-radius: 5%;
-  padding: 10px;
+    height: 400px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.84);
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 10px;
+
 }
 
 .img {
   border: 1px solid black;
   width: 100%;
-  height: 200px;
-  border-radius: 2%;
+  height: 100%;
+  border-radius: 2%; 
 }
+
+p{
+  font-size: 20px;
+}
+button {
+  -moz-border-radius: 28;
+    border-radius: 50px;
+    padding: 8px;
+    font-size: 15px;
+    background-color: rgb(142, 102, 43);
+}
+h1 {
+  font-family: 'MedievalSharp', cursive;
+}
+  
