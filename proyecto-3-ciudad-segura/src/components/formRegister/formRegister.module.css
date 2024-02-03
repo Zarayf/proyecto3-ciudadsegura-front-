@@ -27,11 +27,15 @@
   margin-top: 20px;
 }
 
-/* .content,
+
+
+
+.content,
 span {
   font-size: 30px;
   font-family: 'MedievalSharp', cursive;
-} */
+} 
+
 .submit {
   text-align: center;
   padding: 30px;

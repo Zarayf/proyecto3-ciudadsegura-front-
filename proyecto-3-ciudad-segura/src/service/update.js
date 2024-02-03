@@ -1,6 +1,6 @@
+/* Función que sirve para cambiar el estado de los problemas de pendientes a resueltos. */
 export const update = async (problem, token) => {
   const url = `${import.meta.env.VITE_API_URL}/problems/${problem}`;
-  console.log(problem);
   const dataStatus = {
   problem_status: "Resuelto",
   };
@@ -15,8 +15,6 @@ export const update = async (problem, token) => {
   });
 
   const json = await response.json();
-
-  console.log(json.data);
 
   return json;
 };
