@@ -50,10 +50,10 @@ export const ListProblemsByIdDistrict = () => {
                 </div>
                 <div>
                   <li>
-                    <p> Título:{problem.title}</p>
+                    <p> Título: {problem.title}</p>
                   </li>
                   <li>
-                    <p> Descripción:{problem.description}</p>
+                    <p> Descripción: {problem.description}</p>
                   </li>
                   <li>
                     <p>
@@ -65,7 +65,7 @@ export const ListProblemsByIdDistrict = () => {
                   {/* <<<<<<<<<<<<<<<<<<<<<<<< */}
                   <div>
                     <li>
-                      <p> Estado:{problem.problem_status}</p>
+                      <p> Estado: {problem.problem_status}</p>
                     </li>
                     {user ? (
                       <button onClick={() => handleUpdate(problem.id_problem)}>

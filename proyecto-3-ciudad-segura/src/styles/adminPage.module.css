@@ -1,3 +1,8 @@
 .div {
   background-color: rgba(255, 255, 255, 0.593);
+  font-size: 24px;
+  font-family: 'MedievalSharp', cursive;
+}
+nav {
+  font-size: 20px;
 }
