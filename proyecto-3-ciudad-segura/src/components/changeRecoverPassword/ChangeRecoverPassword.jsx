@@ -6,7 +6,7 @@ export const ChangeRecoverPassword = () => {
   const [email, setEmail] = useState('');
   const [regCode, setRegCode] = useState('');
   const [newPass, setNewPass] = useState('');
-  //const [confirmNewPass, setConfirmNewPass] = useState('');
+  //const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
@@ -14,8 +14,9 @@ export const ChangeRecoverPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  /*   if (newPass !== confirmNewPass) {
-    setError('Las contaseñas son distintas');
+
+/*     if (newPass !== confirmPassword) {
+      setError('Las contraseñas no coinciden');
       return;
     } */
 
@@ -56,7 +57,7 @@ export const ChangeRecoverPassword = () => {
             placeholder='Ingrese codigo'
           />
         </div>
-        <div>
+{        <div>
           <label>Ingrese nueva contraseña</label>
           <input
             type="password"
@@ -65,17 +66,17 @@ export const ChangeRecoverPassword = () => {
             onChange={(e) => setNewPass(e.target.value)}
             placeholder='Nueva contraseña'
           />
-        </div>
-         {/* <div>
-          <label>Repita nueva contraseña</label>
-          <input
-            type='password'
-            name='confirmNewPass'
-            value={confirmNewPass}
-            onChange={(e) => setConfirmNewPass(e.target.value)}
-            placeholder='Repita contraseña'
-          />
-        </div> */}
+        </div>}
+        {/* <div>
+            <input
+              type='password'
+              name='confirmPassword'
+              value={confirmPassword}
+              placeholder='Confirmar Contraseña'
+              required
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </div> */}
         <button>Confirmar</button>
         {error ? <p>{error}</p> : null}
       </form>

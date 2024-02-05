@@ -2,7 +2,8 @@ import { AuthContext } from '../../context/AuthContextProvider';
 import { useContext, useState } from 'react';
 import { newProblemService } from '../../service/newProblemService';
 import { useNavigate } from 'react-router-dom';
-import styles from './FormNewProblem.module.css';
+//import styles from './FormNewProblem.module.css';
+import styles from '../formRegister/formRegister.module.css';
 
 
 export const FormNewProblem = () => {
@@ -32,19 +33,21 @@ export const FormNewProblem = () => {
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.main}>
+      <div className={styles.content}>
+        <h2>Nuevo problema</h2>
       {' '}
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} id='form'>
+        <div className={styles.field}>
+          <input type='text'name='title' />
           <label>Titulo</label>
-          <input type='text' name='title' />
         </div>
-        <div>
+        <div className={styles.field}>
+          <input type='text' name='place_detail'/>
           <label>Lugar</label>
-          <input type='text' name='place_detail' />
         </div>
-        <div>
-          <label>Barrio</label>
+        <div className={styles.field}>
+        
           <select name='id_district'>
             <option value='1'>Bosque de los Árboles Conversadores</option>
             <option value='2'>Cair Paravel</option>
@@ -52,19 +55,20 @@ export const FormNewProblem = () => {
             <option value='4'>Montañas del León</option>
             <option value='5'>Islas Solitarias</option>
           </select>
+          <label>Barrio</label>
         </div>
-        <div>
-          <label>Descripción</label>
+        <div className={styles.field}>
           <input type='text' name='description' />
+          <label>Descripción</label>
         </div>
-        <div>
-          <label>Imagen</label>
+        <div className={styles.field}>
           <input
             type='file'
             name='photo'
             accept='image/*'
             onChange={(e) => setImage(e.target.files[0])}
           />
+          <label>Imagen</label>
         </div>
         <div>
           {Image ? (
@@ -75,11 +79,16 @@ export const FormNewProblem = () => {
             />
           ) : null}
         </div>
-        <input type='submit' value='Enviar' />
+          <div className={styles.submit}>
+            <button className={styles.enviar} type='submit'>
+              Enviar
+            </button>
+          </div>
         {error ? <p>{error}</p> : null}
         {reply ? <p>Has registrado el problema con exito.</p> :  ""} 
         
       </form>
+      </div>
     </section>
   );
 };
