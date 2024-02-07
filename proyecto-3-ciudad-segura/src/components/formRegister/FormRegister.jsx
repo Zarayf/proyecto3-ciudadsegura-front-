@@ -51,7 +51,6 @@ export const Register = () => {
     <div className={styles.main}>
       <div className={styles.content}>
         <h2>Registro</h2>
-
         <form onSubmit={handleSubmit}>
           <div className={styles.field}>
             <input
@@ -63,7 +62,6 @@ export const Register = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-
           <div className={styles.field}>
             <input
               type='email'
