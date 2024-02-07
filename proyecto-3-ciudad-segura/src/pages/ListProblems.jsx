@@ -26,11 +26,9 @@ export const ListProblems = () => {
 
   /* Elemento que muestra el array de los problemas */
   return (
-    <div className={style.div}>
-      <h1>Lista de problemas</h1>
-      <pr>
-
-      </pr>
+    <>
+      <h1 className={style.titulo}>Lista de problemas</h1>
+      <div className={style.div}>
       {problems &&
         problems?.map((problem) => {
           return (
@@ -45,7 +43,12 @@ export const ListProblems = () => {
                         alt='foto_problema'
                       />
                     ) : (
-                      <p>El problema no contiene imagen</p>
+                      <div className={style.divnoimg}>
+                            {' '}
+                            <p className={style.noimg}>
+                              El problema no contiene imagen
+                            </p>
+                          </div>
                     )}
                   </li>
                 </div>
@@ -54,22 +57,36 @@ export const ListProblems = () => {
                     <p><h3> Título: {problem.title}</h3></p>
                   </li>
                   <li>
-                    <p> Descripción: {problem.description}</p>
+                    <p> 
+                      {' '}
+                       <span className={style.destacado}>Descripción: </span>
+                       {problem.description}
+                    </p>
                   </li>
                   <li>
                     <p>
                       {' '}
-                      Fecha creación:
+                      <span className={style.destacado}>
+                      Fecha creación: {' '}
+                      </span>
                         {new Date(problem.create_date).toLocaleString()}
                     </p>
                   </li>
-                  {/* <<<<<<<<<<<<<<<<<<<<<<<< */}
+                  
                   <div>
                     <li>
-                      <p> Estado: {problem.problem_status}</p>
-                    </li>
+                      <p>
+                        {' '}
+                        <span className={style.destacado}>
+                         Estado:
+                        </span>{' '}
+                        {problem.problem_status}
+                      </p>
+                    </ li>
                     {user ? (
-                      <button onClick={() => handleUpdate(problem.id_problem)}>
+                      <button 
+                      className={style.bu}
+                      onClick={() => handleUpdate(problem.id_problem)}>
                         {' '}
                         Marcar como Resuelto{' '}
                       </button>
@@ -85,5 +102,6 @@ export const ListProblems = () => {
 
       {error ? <p>{error}</p> : ''}
     </div>
+    </>
   );
 };
