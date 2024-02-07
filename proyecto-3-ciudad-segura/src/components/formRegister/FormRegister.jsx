@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './formRegister.module.css';
 
 export const Register = () => {
-  const [user_name, setUsername] = useState('');
+  const [user_name, setUsername] = useState(''); /!Igual sería buena idea cambiar el nombre a userName !/
   const [email, setEmail] = useState('');
   const [pass, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -23,8 +23,12 @@ export const Register = () => {
 
     try {
       const r = await registerService({ user_name, email, pass });
+      const user_name = data.get('user_name');
+
       setRta(r);
       setError('');
+      setUsername(userName);
+
       navigate('/Login');
     } catch (error) {
       setError(error.message);
@@ -91,11 +95,13 @@ export const Register = () => {
               required
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-          </div>
+          </div>{/! poner el mismo tipo de envio para todos los formularios? !/}
           <div className={styles.submit}>
             <button className={styles.enviar} type='submit'>
               Enviar
-            </button>
+            </button>       
+            {error ? <p>{error}</p> : null}
+            {reply ? <p>Has creado el usuario "{user_name}" con exito.</p> :  ""} 
           </div>
         </form>
       </div>

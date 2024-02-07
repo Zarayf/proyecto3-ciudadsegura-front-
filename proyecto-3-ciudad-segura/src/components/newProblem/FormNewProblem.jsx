@@ -3,11 +3,13 @@ import { useContext, useState } from 'react';
 import { newProblemService } from '../../service/newProblemService';
 import { useNavigate } from 'react-router-dom';
 import styles from './FormNewProblem.module.css';
+import stylesForm from '../../styles/form.module.css'
 
 
 export const FormNewProblem = () => {
   const { token } = useContext(AuthContext);
 
+  const [title, setTitle] = useState('');
   const [error, setError] = useState('');
   const [Image, setImage] = useState(null);
   const [reply, setReply] = useState('');
@@ -19,11 +21,13 @@ export const FormNewProblem = () => {
 
     try {
       const data = new FormData(e.target);
+      const newTitle = data.get('title'); // Obtener el valor del título
+
 
       const newProblem = await newProblemService({ data, token });
+      setTitle(newTitle); // Almacenar el valor del título en la variable de estado
       setReply(newProblem);
       setError("");
-      //navigate('/AdminPage');
       
     } catch (error) {
       setError(error.message);
@@ -37,7 +41,10 @@ export const FormNewProblem = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Titulo</label>
-          <input type='text' name='title' />
+          <input type='text' 
+                 name='title' 
+                 onChange={(e) => setTitle(e.target.value)} // Actualizar el valor del título
+          />
         </div>
         <div>
           <label>Lugar</label>
@@ -53,11 +60,24 @@ export const FormNewProblem = () => {
             <option value='5'>Islas Solitarias</option>
           </select>
         </div>
-        <div>
-          <label>Descripción</label>
-          <input type='text' name='description' />
+        <div className={stylesForm.field}>
+          <input className={stylesForm.input} type='text' placeholder=' ' id="description" required="" name='description' />
+          <label htmlFor="description">
+            <span className={stylesForm.style="--i: 0"} >D</span>
+            <span className={stylesForm.style="--i: 1"}>e</span>
+            <span className={stylesForm.style="--i: 2"}>s</span>
+            <span className={stylesForm.style="--i: 3"}>c</span>
+            <span className={stylesForm.style="--i: 4"}>r</span>
+            <span className={stylesForm.style="--i: 5"}>i</span>
+            <span className={stylesForm.style="--i: 6"}>p</span>
+            <span className={stylesForm.style="--i: 7"}>c</span>
+            <span className={stylesForm.style="--i: 8"}>i</span>
+            <span className={stylesForm.style="--i: 9"}>ó</span>
+            <span className={stylesForm.style="--i: 10"}>n</span>
+          </label>
+         {/*  <div className={styles.Form.underline}></div> */}
         </div>
-        <div>
+       {/*  <div>
           <label>Imagen</label>
           <input
             type='file'
@@ -75,9 +95,9 @@ export const FormNewProblem = () => {
             />
           ) : null}
         </div>
-        <input type='submit' value='Enviar' />
+        <input type='submit' value='Enviar' /> */}
         {error ? <p>{error}</p> : null}
-        {reply ? <p>Has registrado el problema con exito.</p> :  ""} 
+        {reply ? <p>Has creado el usuario "{title}" con exito.</p> :  ""} 
         
       </form>
     </section>

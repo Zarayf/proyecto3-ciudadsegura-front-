@@ -1,0 +1,27 @@
+.field input:focus {
+    outline: none;
+}
+
+.field label {
+    position: absolute;
+    bottom: 5px;
+    cursor: text;
+    display: flex;
+    color: fuchsia;
+    font-size: 16px;
+}
+
+.field span {
+    transition: transform 0.25s ease-in-out;
+    transition-delay: calc(var(--i) * 0.7s) ;
+}
+
+.field input:focus-label span,
+.field input:not(:placeholder-shown)~label span {
+    font-size: 14px;
+    transform: translateY(-25px);
+}
+
+.field noFormat {
+    color: #000;
+}
