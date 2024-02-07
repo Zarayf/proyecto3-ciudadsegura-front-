@@ -1,4 +1,3 @@
-/* ! FALTA DARLE UN FONDO AL HEADER  */
 .header {
   width: 100%;
   height: 100px;
@@ -7,6 +6,7 @@
   align-items: center;
   opacity: 0.8;
   padding: 30px;
+
   background: rgb(142, 102, 43);
   background: linear-gradient(
     0deg,
@@ -16,11 +16,13 @@
   );
 }
 .img {
+  padding-top: 5px;
   width: 7rem;
   display: block;
 }
 .li {
   list-style: none;
+  padding-top: 20px;
 }
 .li:hover {
   text-shadow: -1px 1px 22px rgba(0, 0, 0, 0.69);
