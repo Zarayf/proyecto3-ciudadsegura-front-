@@ -7,7 +7,7 @@ export const AdminPage = () => {
     <div className={styles.div}>
       <AdminProfile />
       <nav>
-        <ul> 
+        <ul className={styles.menuAdmin}> 
         <li><Link  to={'/NewProblem'}>Crear problema</Link></li>
         
         <li><Link  to={'/ListProblems'}>Editar problema</Link></li>
