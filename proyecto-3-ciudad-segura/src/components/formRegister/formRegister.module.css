@@ -29,7 +29,9 @@
   border-bottom: 1px solid #3f3f3f;
   background: none;
   padding: 3px 0;
-  margin-top: 20px;
+  /* margin-top: 20px;
+  margin-bottom: 40px; */
+  margin: 25px 0;
   width: 100%;
 }
 

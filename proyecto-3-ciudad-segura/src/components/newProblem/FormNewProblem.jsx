@@ -30,36 +30,49 @@ export const FormNewProblem = () => {
   return (
     <section className={styles.main}>
       <div className={styles.content}>
-        <h2>Nuevo problema</h2>{' '}
-        <form onSubmit={handleSubmit} id='form'>
-          <div className={styles.field}>
-            <input type='text' name='title' />
-            <label>Titulo</label>
-          </div>
-          <div className={styles.field}>
-            <input type='text' name='place_detail' />
-            <label>Lugar</label>
-          </div>
-          <div className={styles.field}>
-            <select name='id_district'>
-              <option value='1'>Bosque de los Árboles Conversadores</option>
-              <option value='2'>Cair Paravel</option>
-              <option value='3'>Archenland</option>
-              <option value='4'>Montañas del León</option>
-              <option value='5'>Islas Solitarias</option>
-            </select>
-            <label>Barrio</label>
-          </div>
-          <div className={styles.field}>
-            <input type='text' name='description' />
-            <label>Descripción</label>
-          </div>
-          <div className={styles.field}>
-            <input
-              type='file'
-              name='photo'
-              accept='image/*'
-              onChange={(e) => setImage(e.target.files[0])}
+
+        <h2>Nuevo problema</h2>
+      {' '}
+      <form onSubmit={handleSubmit} id='form'>
+        <div className={styles.field}>
+          <label>Titulo</label>
+          <input type='text'name='title' />
+        </div>
+        <div className={styles.field}>
+          <label>Lugar</label>
+          <input type='text' name='place_detail'/>
+        </div>
+        <div className={styles.field}>
+        <label>Barrio</label>
+          <select name='id_district'>
+            <option value='1'>Bosque de los Árboles Conversadores</option>
+            <option value='2'>Cair Paravel</option>
+            <option value='3'>Archenland</option>
+            <option value='4'>Montañas del León</option>
+            <option value='5'>Islas Solitarias</option>
+          </select>
+        </div>
+        <div className={styles.field}>
+          <label>Descripción</label>
+          <input type='text' name='description' />
+        </div>
+        <div className={styles.field}>
+          <label>Imagen</label>
+          <input
+            type='file'
+            name='photo'
+            accept='image/*'
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+        </div>
+        <div>
+          {Image ? (
+            <img
+              className={styles.img}
+              src={URL.createObjectURL(Image)}
+              alt='image'
+
+       
             />
             <label>Imagen</label>
           </div>
