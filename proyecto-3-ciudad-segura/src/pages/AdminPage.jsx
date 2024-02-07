@@ -7,14 +7,15 @@ export const AdminPage = () => {
     <div className={styles.div}>
       <AdminProfile />
       <nav>
-        <Link to={'/NewProblem'}>Crear problema</Link>
-        {'  |  '}
-        <Link to={'/ListProblems'}>Editar problema</Link>
-        {'  |  '}
-        <Link to={'/ListProblems'}>Listar problemas</Link>
-        {'  |  '}
-        <Link to={'/Register'}>Crear otro usuario</Link>
-        {'  |  '}
+        <ul> 
+        <li><Link  to={'/NewProblem'}>Crear problema</Link></li>
+        
+        <li><Link  to={'/ListProblems'}>Editar problema</Link></li>
+        
+        <li><Link  to={'/ListProblems'}>Listar problemas</Link></li>
+        
+        <li><Link  to={'/Register'}>Crear otro usuario</Link></li>
+        </ul>
       </nav>
     </div>
   );
