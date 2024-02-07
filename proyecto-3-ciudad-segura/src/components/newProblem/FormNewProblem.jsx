@@ -65,17 +65,7 @@ export const FormNewProblem = () => {
             onChange={(e) => setImage(e.target.files[0])}
           />
         </div>
-        <div>
-          {Image ? (
-            <img
-              className={styles.img}
-              src={URL.createObjectURL(Image)}
-              alt='image'
-
-       
-            />
-            <label>Imagen</label>
-          </div>
+        
           <div>
             {Image ? (
               <img
