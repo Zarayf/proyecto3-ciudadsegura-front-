@@ -39,15 +39,15 @@ export const FormNewProblem = () => {
       {' '}
       <form onSubmit={handleSubmit} id='form'>
         <div className={styles.field}>
-          <input type='text'name='title' />
           <label>Titulo</label>
+          <input type='text'name='title' />
         </div>
         <div className={styles.field}>
-          <input type='text' name='place_detail'/>
           <label>Lugar</label>
+          <input type='text' name='place_detail'/>
         </div>
         <div className={styles.field}>
-        
+        <label>Barrio</label>
           <select name='id_district'>
             <option value='1'>Bosque de los Árboles Conversadores</option>
             <option value='2'>Cair Paravel</option>
@@ -55,20 +55,19 @@ export const FormNewProblem = () => {
             <option value='4'>Montañas del León</option>
             <option value='5'>Islas Solitarias</option>
           </select>
-          <label>Barrio</label>
         </div>
         <div className={styles.field}>
-          <input type='text' name='description' />
           <label>Descripción</label>
+          <input type='text' name='description' />
         </div>
         <div className={styles.field}>
+          <label>Imagen</label>
           <input
             type='file'
             name='photo'
             accept='image/*'
             onChange={(e) => setImage(e.target.files[0])}
           />
-          <label>Imagen</label>
         </div>
         <div>
           {Image ? (
