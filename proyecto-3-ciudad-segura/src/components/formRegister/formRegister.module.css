@@ -7,31 +7,50 @@
 }
 .content {
   margin: 30px;
-  width: 300px;
-  height: 400px;
+  /* width: 300px; */
+  width: auto;
+  /* height: 400px; */
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.593);
   box-shadow: 7px 7px 22px 3px rgba(0, 0, 0, 0.54);
-  padding: 10rem;
+  /* padding: 10rem; */
+  padding:2rem;
   border-radius: 20px;
   gap: 20px;
 }
-.field input {
+
+
+.field input, select {
   border: none;
   border-bottom: 1px solid #3f3f3f;
   background: none;
   padding: 3px 0;
-  margin-top: 20px;
+  /* margin-top: 20px;
+  margin-bottom: 40px; */
+  margin: 25px 0;
+  width: 100%;
 }
 
+.field input:focus+label, 
+.field input:valid+label{
+  bottom: 25px;
+  font-size: 13px;
+
+}
+
+
+
+/* sustituir este css por headers (h1,h2)
 .content,
 span {
   font-size: 30px;
   font-family: 'MedievalSharp', cursive;
-}
+}  */
+
 .submit {
   text-align: center;
   padding: 30px;
@@ -48,4 +67,13 @@ span {
 }
 .enviar:hover {
   box-shadow: 7px 7px 22px 3px rgba(0, 0, 0, 0.133);
+}
+
+.error{
+  margin: 0 auto;
+  background-color: #b3adbb;
+  padding: 1em;
+  font-size: 0.9rem;
+  max-height: 50px;
+  border-radius: 10px;
 }

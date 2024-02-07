@@ -1,7 +1,6 @@
 .section {
-  height: 70%;
+  height: 100%;
   width: 100%;
-
 
   background: linear-gradient(
       to bottom,
@@ -35,5 +34,5 @@
   animation: p 0.5s ease-in-out 5 both;
   font-family: 'MedievalSharp', cursive;
   font-size: 1.5rem;
-  text-shadow: rgba(255, 255, 255, 0.868) 0.20dvh 0.20dvh 0.1dvh;
+  text-shadow: rgba(255, 255, 255, 0.868) 0.2dvh 0.2dvh 0.1dvh;
 }

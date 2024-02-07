@@ -7,6 +7,7 @@ export const AdminPage = () => {
     <div className={styles.div}>
       <AdminProfile />
       <nav>
+
         <ul className={styles.menuAdmin}> 
         <li><Link  to={'/NewProblem'}>Crear problema</Link></li>
         
@@ -16,6 +17,7 @@ export const AdminPage = () => {
         
         <li><Link  to={'/Register'}>Crear otro usuario</Link></li>
         </ul>
+
       </nav>
     </div>
   );

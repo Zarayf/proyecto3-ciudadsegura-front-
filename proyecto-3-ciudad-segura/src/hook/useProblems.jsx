@@ -21,7 +21,6 @@ function updateProblems(){
         }
 
         setProblems(problems.problems);
-        // console.log(problems);
       } catch (error) {
         setError(error);
       }

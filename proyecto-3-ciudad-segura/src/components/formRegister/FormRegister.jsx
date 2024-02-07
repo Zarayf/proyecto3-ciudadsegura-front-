@@ -32,10 +32,21 @@ export const Register = () => {
   };
 
   return (
+    <>
+
+{rta.status == 'ok' ? (
+      <>
+      <p >{rta.message}</p>
+        <Link to={'/login'}>
+          <button>Login</button>
+        </Link>
+            </>
+          ) : ( ''
+          )}
+        {error ? <p className={styles.error}>{error}</p> : ''}
     <div className={styles.main}>
       <div className={styles.content}>
-        <span>Registro</span>
-
+        <h2>Registro</h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.field}>
             <input
@@ -47,7 +58,6 @@ export const Register = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-
           <div className={styles.field}>
             <input
               type='email'
@@ -85,19 +95,9 @@ export const Register = () => {
               Enviar
             </button>
           </div>
-          {rta.status == 'ok' ? (
-            <>
-              <p>{rta.message}</p>
-              <Link to={'/login'}>
-                <button>Login</button>
-              </Link>
-            </>
-          ) : (
-            ''
-          )}
-          {error ? <p>{error}</p> : ''}
         </form>
       </div>
     </div>
+    </>
   );
 };

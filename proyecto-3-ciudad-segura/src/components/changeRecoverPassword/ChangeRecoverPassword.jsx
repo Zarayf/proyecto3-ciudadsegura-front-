@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 export const ChangeRecoverPassword = () => {
   const [email, setEmail] = useState('');
   const [regCode, setRegCode] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  //   const [confirmNewPass, setConfirmNewPass] = useState('');
+  const [newPass, setNewPass] = useState('');
+  // const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
@@ -14,8 +14,8 @@ export const ChangeRecoverPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // if (newPassword !== confirmNewPass) {
-    //   setError('Las contaseñas son distintas');
+    // if (newPass !== confirmPassword) {
+    //   setError('Las contraseñas no coinciden');
     //   return;
     // }
 
@@ -56,24 +56,26 @@ export const ChangeRecoverPassword = () => {
             placeholder='Ingrese codigo'
           />
         </div>
-        <div>
-          <label>Ingrese nueva contraseña</label>
-          <input
-            type='text'
-            name='newPass'
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            placeholder=' Nueva contraseña'
-          />
-        </div>
+        {
+          <div>
+            <label>Ingrese nueva contraseña</label>
+            <input
+              type='password'
+              name='newPass'
+              value={newPass}
+              onChange={(e) => setNewPass(e.target.value)}
+              placeholder='Nueva contraseña'
+            />
+          </div>
+        }
         {/* <div>
-          <label>Repita nueva contraseña</label>
+          <label>Repita contraseña</label>
           <input
-            type='text'
-            name='newPass'
-            value={confirmNewPass}
-            onChange={(e) => setConfirmNewPass(e.target.value)}
-            placeholder='Repita contraseña'
+            type='password'
+            name='confirmPassword'
+            value={confirmPassword}
+            placeholder='Confirmar Contraseña'
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div> */}
         <button>Confirmar</button>
