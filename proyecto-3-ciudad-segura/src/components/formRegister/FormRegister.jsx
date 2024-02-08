@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { registerService } from '../../service/registerService';
 import { Link, useNavigate } from 'react-router-dom';
-import styles from './formRegister.module.css';
+import styles from '../../styles/form.module.css';
 
 export const Register = () => {
   const [user_name, setUsername] = useState('');
@@ -47,45 +47,46 @@ export const Register = () => {
       <div className={styles.main}>
         <div className={styles.content}>
           <h2>Registro</h2>
+
           <form onSubmit={handleSubmit}>
             <div className={styles.field}>
+              <label>Nombre de usuario</label>
               <input
                 type='text'
                 name='user_name'
                 value={user_name}
-                placeholder='Nombre de usuario'
                 required
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className={styles.field}>
+              <label>Email</label>
               <input
                 type='email'
                 name='email'
                 value={email}
-                placeholder='Email'
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
             <div className={styles.field}>
+              <label>Contraseña</label>
               <input
                 type='password'
                 name='pass'
                 value={pass}
-                placeholder='Contraseña'
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
             <div className={styles.field}>
+              <label>Confirmar Contraseña</label>
               <input
                 type='password'
                 name='confirmarPassword'
                 value={confirmPassword}
-                placeholder='Confirmar Contraseña'
                 required
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />

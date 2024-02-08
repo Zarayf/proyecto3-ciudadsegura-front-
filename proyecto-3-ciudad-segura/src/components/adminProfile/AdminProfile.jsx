@@ -6,8 +6,6 @@ import styles from './adminProfile.module.css';
 export const AdminProfile = () => {
   const { user, logout } = useContext(AuthContext);
 
-  //const { VITE_API_URL } = import.meta.env;
-
   return (
     <div>
       {user ? (

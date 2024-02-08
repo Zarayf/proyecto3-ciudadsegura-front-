@@ -4,6 +4,7 @@ import style from '../styles/ListProblemsByIdDistrict.module.css';
 import { update } from '../service/update';
 import { AuthContext } from '../context/AuthContextProvider';
 import { useContext } from 'react';
+import noimg from '../img/noimg.jpg';
 
 export const ListProblemsByIdDistrict = () => {
   const { id_district } = useParams();
@@ -42,12 +43,11 @@ export const ListProblemsByIdDistrict = () => {
                             alt='foto_problema'
                           />
                         ) : (
-                          <div className={style.divnoimg}>
-                            {' '}
-                            <p className={style.noimg}>
-                              El problema no contiene imagen
-                            </p>
-                          </div>
+                          <img
+                            className={style.noimg}
+                            src={noimg}
+                            alt='no image'
+                          ></img>
                         )}
                       </li>
                     </div>
@@ -55,8 +55,7 @@ export const ListProblemsByIdDistrict = () => {
                       <li>
                         <p>
                           {' '}
-                          <span className={style.destacado}>Título: </span>
-                          {problem.title}
+                          <h3>Título: {problem.title} </h3>
                         </p>
                       </li>
                       <li>
