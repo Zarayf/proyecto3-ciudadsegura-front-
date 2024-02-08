@@ -7,15 +7,15 @@
 }
 .content {
   margin: 30px;
-  width: 300px;
-  height: 400px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.593);
   box-shadow: 7px 7px 22px 3px rgba(0, 0, 0, 0.54);
-  padding: 10rem;
+  padding: 2rem;
   border-radius: 20px;
   gap: 20px;
 }
@@ -24,7 +24,9 @@
   border-bottom: 1px solid #3f3f3f;
   background: none;
   padding: 3px 0;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  margin: 25px 0;
+  width: 100%;
 }
 
 .content h2 {
@@ -36,11 +38,11 @@
   padding: 30px;
 }
 .login {
-  background-color: rgba(4, 35, 35, 0.252);
-  width: 110px;
-  height: 40px;
-  border: none;
-  border-radius: 4%;
+  border-radius: 50px;
+  padding: 8px;
+  margin: 15px;
+  font-size: 15px;
+  background-color: rgb(142, 102, 43);
   cursor: pointer;
   font-family: 'MedievalSharp', cursive;
   font-size: 15px;
@@ -49,10 +51,14 @@
   box-shadow: 7px 7px 22px 3px rgba(0, 0, 0, 0.133);
 }
 .recuperarpass {
-  position: absolute;
+  text-align: center;
   padding: 20px;
   font-size: 15px;
+  font-family: 'MedievalSharp', cursive;
 }
-.link {
+.recuperarpass p:hover {
+  text-shadow: 5px 4px 2px rgba(0, 0, 0, 0.6);
+}
+.link:hover {
   text-decoration: none;
 }

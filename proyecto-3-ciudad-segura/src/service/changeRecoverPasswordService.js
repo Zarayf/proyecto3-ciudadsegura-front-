@@ -1,9 +1,16 @@
-export const changeRecoverPasswordService = async (data) => {
+export const changeRecoverPasswordService = async ({
+  email,
+  recovery_code,
+  newPass,
+}) => {
   const url = `${import.meta.env.VITE_API_URL}/user/password/reset`;
 
   const response = await fetch(url, {
     method: 'PUT',
-    body: data,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, recovery_code, newPass }),
   });
 
   const json = await response.json();
