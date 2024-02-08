@@ -1,30 +1,31 @@
 import { useState } from 'react';
 import { changeRecoverPasswordService } from '../../service/changeRecoverPasswordService';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const ChangeRecoverPassword = () => {
   const [email, setEmail] = useState('');
-  const [regCode, setRegCode] = useState('');
+  const [recovery_code, setRecovery_code] = useState('');
   const [newPass, setNewPass] = useState('');
-  // const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-
-  const navigate = useNavigate();
+  const [confirmarPassword, setConfirmPassword] = useState('');
+  const [rta, setRta] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // if (newPass !== confirmPassword) {
-    //   setError('Las contraseñas no coinciden');
-    //   return;
-    // }
+    if (newPass !== confirmarPassword) {
+      setError('Las contraseñas no coinciden');
+      return;
+    }
 
     try {
-      const data = new FormData(e.target);
-
-      await changeRecoverPasswordService(data);
-
-      navigate('/login');
+      const r = await changeRecoverPasswordService({
+        email,
+        recovery_code,
+        newPass,
+        confirmarPassword,
+      });
+      setRta(r);
     } catch (error) {
       setError(error.message);
     }
@@ -51,8 +52,8 @@ export const ChangeRecoverPassword = () => {
           <input
             type='text'
             name='recovery_code'
-            value={regCode}
-            onChange={(e) => setRegCode(e.target.value)}
+            value={recovery_code}
+            onChange={(e) => setRecovery_code(e.target.value)}
             placeholder='Ingrese codigo'
           />
         </div>
@@ -68,18 +69,30 @@ export const ChangeRecoverPassword = () => {
             />
           </div>
         }
-        {/* <div>
+        <div>
           <label>Repita contraseña</label>
           <input
             type='password'
-            name='confirmPassword'
-            value={confirmPassword}
+            name='confirmarPassword'
+            value={confirmarPassword}
             placeholder='Confirmar Contraseña'
+            required
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-        </div> */}
+        </div>
         <button>Confirmar</button>
         {error ? <p>{error}</p> : null}
+
+        {rta.status == 'ok' ? (
+          <>
+            <p>{rta.message}</p>
+            <Link to={'/login'}>
+              <button>Login</button>
+            </Link>
+          </>
+        ) : (
+          ''
+        )}
       </form>
     </div>
   );

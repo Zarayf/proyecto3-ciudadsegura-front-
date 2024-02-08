@@ -20,7 +20,6 @@ export const FormNewProblem = () => {
       const newProblem = await newProblemService({ data, token });
       setReply(newProblem);
       setError('');
-      //navigate('/AdminPage');
     } catch (error) {
       setError(error.message);
       setReply('');
@@ -36,11 +35,14 @@ export const FormNewProblem = () => {
             <input type='text' name='title' />
             <label>Titulo</label>
           </div>
+
           <div className={styles.field}>
             <input type='text' name='place_detail' />
             <label>Lugar</label>
           </div>
+
           <div className={styles.field}>
+            <label>Barrio</label>
             <select name='id_district'>
               <option value='1'>Bosque de los Árboles Conversadores</option>
               <option value='2'>Cair Paravel</option>
@@ -48,8 +50,8 @@ export const FormNewProblem = () => {
               <option value='4'>Montañas del León</option>
               <option value='5'>Islas Solitarias</option>
             </select>
-            <label>Barrio</label>
           </div>
+
           <div className={styles.field}>
             <input type='text' name='description' />
             <label>Descripción</label>
