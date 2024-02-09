@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from '../../styles/form.module.css';
 
 export const Register = () => {
-  const [user_name, setUsername] = useState(''); /!Igual sería buena idea cambiar el nombre a userName !/
+  const [user_name, setUsername] = useState(''); 
   const [email, setEmail] = useState('');
   const [pass, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -100,6 +100,7 @@ export const Register = () => {
                 Enviar
               </button>
             </div>
+            {reply ? <p>Has registrado el problema '{user_name}' con exito.</p> : ''}
           </form>
         </div>
       </div>

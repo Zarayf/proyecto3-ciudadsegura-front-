@@ -81,7 +81,7 @@ export const FormNewProblem = () => {
             </button>
           </div>
           {error ? <p>{error}</p> : null}
-          {reply ? <p>Has registrado el problema con exito.</p> : ''}
+          {reply ? <p>Has registrado el problema '{title}' con exito.</p> : ''}
         </form>
       </div>
     </section>
