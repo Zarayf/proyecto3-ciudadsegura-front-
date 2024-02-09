@@ -6,7 +6,10 @@ import styles from '../../styles/form.module.css';
 export const FormNewProblem = () => {
   const { token } = useContext(AuthContext);
 
+
   const [title, setTitle] =useState('');
+
+
   const [error, setError] = useState('');
   const [Image, setImage] = useState(null);
   const [reply, setReply] = useState('');
@@ -16,10 +19,13 @@ export const FormNewProblem = () => {
 
     try {
       const data = new FormData(e.target);
-      const newTitle = data.get('title');
+
+      const newTitle = data.get('title'); // Obtener el valor del título
+
 
       const newProblem = await newProblemService({ data, token });
-      setTitle(newTitle);
+      setTitle(newTitle); // Almacenar el valor del título en la variable de estado
+
       setReply(newProblem);
       setError('');
     } catch (error) {
