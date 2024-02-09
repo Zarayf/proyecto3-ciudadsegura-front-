@@ -6,6 +6,7 @@ import styles from '../../styles/form.module.css';
 export const FormNewProblem = () => {
   const { token } = useContext(AuthContext);
 
+  const [title, setTitle] =useState('');
   const [error, setError] = useState('');
   const [Image, setImage] = useState(null);
   const [reply, setReply] = useState('');
@@ -15,8 +16,10 @@ export const FormNewProblem = () => {
 
     try {
       const data = new FormData(e.target);
+      const newTitle = data.get('title');
 
       const newProblem = await newProblemService({ data, token });
+      setTitle(newTitle);
       setReply(newProblem);
       setError('');
     } catch (error) {
@@ -77,7 +80,7 @@ export const FormNewProblem = () => {
             </button>
           </div>
           {error ? <p>{error}</p> : null}
-          {reply ? <p>Has registrado el problema con exito.</p> : ''}
+          {reply ? <p>Has registrado el problema {title} con exito.</p> : ''}
         </form>
       </div>
     </section>
