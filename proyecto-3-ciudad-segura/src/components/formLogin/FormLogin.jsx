@@ -31,20 +31,21 @@ export const FormLogin = () => {
     <div className={styles.main}>
       <div className={styles.content}>
         <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmit} id='form'>
           <div className={styles.field}>
+            <label>Email</label>
             <input
               type='email'
               name='email'
-              placeholder='Email'
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className={styles.field}>
+            <label>Contraseña</label>
             <input
               type='password'
               name='pass'
-              placeholder='Contraseña'
               onChange={(e) => setPasswd(e.target.value)}
             />
           </div>

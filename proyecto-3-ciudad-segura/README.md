@@ -5,7 +5,7 @@ Se complementa con el Backend del siguiente enlace: https://github.com/Zarayf/pr
 
 ## Descripción
 
-Esta app sirve para publicar problemas de accesibilidad de una ciudad.
+Esta app sirve para publicar problemas de accesibilidad de una ciudad y está pensado para Mobile First.
 El o los administradores pueden publicar y editar las publicaciones.
 
 La hemos enfocado a la ciudad de Narnia pero se puede implementar para cualquier ciudad modificando los datos en la base de datos de la API.
