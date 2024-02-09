@@ -7,14 +7,23 @@ export const AdminPage = () => {
     <div className={styles.div}>
       <AdminProfile />
       <nav>
-        <Link to={'/NewProblem'}>Crear problema</Link>
-        {'  |  '}
-        <Link to={'/ListProblemsByIdDistrict'}>Listar/Editar los problemas por barrio</Link>
-        {'  |  '}
-        <Link to={'/ListProblems'}>Listar/Editar todos problemas</Link>
-        {'  |  '}
-        <Link to={'/Register'}>Crear otro usuario</Link>
-        {'  |  '}
+        <ul className={styles.menuAdmin}>
+          <li>
+            <Link to={'/NewProblem'}>Crear problema</Link>
+          </li>
+
+          <li>
+            <Link to={'/ListProblems'}>Editar/Listar todos los problemas</Link>
+          </li>
+
+          <li>
+            <Link to={'/'}>Editar/Listar por barrio</Link>
+          </li>
+
+          <li>
+            <Link to={'/Register'}>Crear otro usuario</Link>
+          </li>
+        </ul>
       </nav>
     </div>
   );
