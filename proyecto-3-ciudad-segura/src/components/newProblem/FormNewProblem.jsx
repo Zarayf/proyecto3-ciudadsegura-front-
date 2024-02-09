@@ -7,6 +7,7 @@ import styles from '../formRegister/formRegister.module.css';
 export const FormNewProblem = () => {
   const { token } = useContext(AuthContext);
 
+  const [title, setTitle] = useState('');
   const [error, setError] = useState('');
   const [Image, setImage] = useState(null);
   const [reply, setReply] = useState('');
@@ -16,11 +17,14 @@ export const FormNewProblem = () => {
 
     try {
       const data = new FormData(e.target);
+      const newTitle = data.get('title'); // Obtener el valor del título
+
 
       const newProblem = await newProblemService({ data, token });
+      setTitle(newTitle); // Almacenar el valor del título en la variable de estado
       setReply(newProblem);
-      setError('');
-      //navigate('/AdminPage');
+      setError("");
+      
     } catch (error) {
       setError(error.message);
       setReply('');
@@ -30,49 +34,36 @@ export const FormNewProblem = () => {
   return (
     <section className={styles.main}>
       <div className={styles.content}>
-
-        <h2>Nuevo problema</h2>
-      {' '}
-      <form onSubmit={handleSubmit} id='form'>
-        <div className={styles.field}>
-          <label>Titulo</label>
-          <input type='text'name='title' />
-        </div>
-        <div className={styles.field}>
-          <label>Lugar</label>
-          <input type='text' name='place_detail'/>
-        </div>
-        <div className={styles.field}>
-        <label>Barrio</label>
-          <select name='id_district'>
-            <option value='1'>Bosque de los Árboles Conversadores</option>
-            <option value='2'>Cair Paravel</option>
-            <option value='3'>Archenland</option>
-            <option value='4'>Montañas del León</option>
-            <option value='5'>Islas Solitarias</option>
-          </select>
-        </div>
-        <div className={styles.field}>
-          <label>Descripción</label>
-          <input type='text' name='description' />
-        </div>
-        <div className={styles.field}>
-          <label>Imagen</label>
-          <input
-            type='file'
-            name='photo'
-            accept='image/*'
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-        </div>
-        <div>
-          {Image ? (
-            <img
-              className={styles.img}
-              src={URL.createObjectURL(Image)}
-              alt='image'
-
-       
+        <h2>Nuevo problema</h2>{' '}
+        <form onSubmit={handleSubmit} id='form'>
+          <div className={styles.field}>
+            <input type='text' name='title' />
+            <label>Titulo</label>
+          </div>
+          <div className={styles.field}>
+            <input type='text' name='place_detail' />
+            <label>Lugar</label>
+          </div>
+          <div className={styles.field}>
+            <select name='id_district'>
+              <option value='1'>Bosque de los Árboles Conversadores</option>
+              <option value='2'>Cair Paravel</option>
+              <option value='3'>Archenland</option>
+              <option value='4'>Montañas del León</option>
+              <option value='5'>Islas Solitarias</option>
+            </select>
+            <label>Barrio</label>
+          </div>
+          <div className={styles.field}>
+            <input type='text' name='description' />
+            <label>Descripción</label>
+          </div>
+          <div className={styles.field}>
+            <input
+              type='file'
+              name='photo'
+              accept='image/*'
+              onChange={(e) => setImage(e.target.files[0])}
             />
             <label>Imagen</label>
           </div>
