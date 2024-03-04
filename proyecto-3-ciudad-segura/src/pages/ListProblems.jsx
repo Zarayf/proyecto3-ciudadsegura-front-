@@ -34,19 +34,19 @@ export const ListProblems = () => {
               <>
                 <section className={style.section1} key={problem.id_problem}>
                   <ul>
-                    <div>
+                    <div className={style.contentimgs}>
                       <li>
                         {problem.photo ? (
                           <img
-                            className={style.img}
+                            className={style.image}
                             src={`${VITE_API_URL}/uploads/${problem.photo}`}
                             alt='foto_problema'
                           />
                         ) : (
                           <img
-                            className={style.noimg}
+                            className={style.noimage}
                             src={noimg}
-                            alt='no image'
+                            alt='no contiene imagen'
                           ></img>
                         )}
                       </li>
@@ -102,7 +102,6 @@ export const ListProblems = () => {
               </>
             );
           })}
-
         {error ? <p>{error}</p> : ''}
       </div>
     </>

@@ -8,7 +8,7 @@ export const Home = () => {
     <>
       <section className={styles.section}>
         <form className={styles.form}>
-          <p className={styles.p}> ¿ Qué barrio quieres consultar ?</p>
+          <p className={styles.p}>¿Qué barrio quieres consultar?</p>
           <SelectDistrict />
         </form>
       </section>
