@@ -32,6 +32,9 @@
 .p {
   animation: p 0.5s ease-in-out 5 both;
   font-family: 'MedievalSharp', cursive;
-  font-size: 1.5rem;
+  font-size: 3rem;
   text-shadow: rgba(255, 255, 255, 0.868) 0.2dvh 0.2dvh 0.1dvh;
+}
+.form {
+  margin: 0.5rem;
 }
